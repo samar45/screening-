@@ -8,17 +8,16 @@ app = Flask(__name__)
 # Define the folder where the model is stored
 # folder_name = "Models"
 # path =os.path.join(os.getcwd(),folder_name)
+
 with(open('DT_Dating_score.pkl',"rb")) as model_file:
     model = pickle.load(model_file)
 
+
+
+
 @app.route("/")
-def greet():
-
-    return "hello i am samar"
-
-@app.route("/Greet1")
 def greet1():
-    return "Call me MR X"
+    return "Welcome MR X"
 
 @app.route("/predict",methods = ["GET"])
 def predict_note_authentication():
